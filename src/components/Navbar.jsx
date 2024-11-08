@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-scroll'
 import { Menu, X } from 'lucide-react'
 import Logo from '../assets/urbacar.png'
 
@@ -14,11 +15,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId)
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
-    }
+  const closeMenu = () => {
     setIsOpen(false)
   }
 
@@ -28,21 +25,25 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img className="h-16 w-auto" src={Logo} alt="Urbacar Logo" />
+              {isScrolled && (
+                <img className="h-16 w-auto" src={Logo} alt="Urbacar Logo" />
+              )}
             </div>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {['inicio', 'quienes-somos', 'proyectos', 'galeria', 'contactanos'].map((item) => (
-                <button
+                <Link
                   key={item}
-                  onClick={() => scrollToSection(item)}
-                  className={`px-3 py-2 rounded-md text-lg font-medium ${
+                  to={item}
+                  smooth={true}
+                  duration={500}
+                  className={`px-3 py-2 rounded-md text-lg font-medium cursor-pointer ${
                     isScrolled ? 'text-white hover:bg-[#a03320]' : 'text-white hover:bg-white hover:text-[#b63a24]'
                   } transition-colors duration-300`}
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
-                </button>
+                </Link>
               ))}
             </div>
           </div>
@@ -75,13 +76,16 @@ export default function Navbar() {
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {['inicio', 'quienes-somos', 'proyectos', 'galeria', 'contactanos'].map((item) => (
-            <button
+            <Link
               key={item}
-              onClick={() => scrollToSection(item)}
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#a03320] transition-colors duration-300"
+              to={item}
+              smooth={true}
+              duration={500}
+              onClick={closeMenu}
+              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#a03320] transition-colors duration-300 cursor-pointer"
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
-            </button>
+            </Link>
           ))}
         </div>
       </div>
@@ -89,7 +93,7 @@ export default function Navbar() {
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
-          onClick={() => setIsOpen(false)}
+          onClick={closeMenu}
         ></div>
       )}
     </nav>

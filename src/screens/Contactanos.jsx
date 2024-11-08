@@ -1,6 +1,5 @@
-import { Facebook, Instagram, MessageCircle, MapPin, Phone, Mail, Briefcase } from 'lucide-react'
-import { FaTiktok } from 'react-icons/fa'
-import { FaWhatsapp } from 'react-icons/fa'
+import { MapPin, Phone, Mail, Briefcase } from 'lucide-react'
+import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa'
 
 export default function Contactanos() {
   return (
@@ -28,20 +27,17 @@ export default function Contactanos() {
               </p>
             </div>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="hover:text-[#b63a24] transition-colors duration-300 transform hover:scale-110">
-                <Facebook size={24} />
+              <a href="#" className="hover:text-[#1877F2] transition-colors duration-300 transform hover:scale-110">
+                <FaFacebook size={24} />
               </a>
-              <a href="#" className="hover:text-[#b63a24] transition-colors duration-300 transform hover:scale-110">
-                <Instagram size={24} />
+              <a href="#" className="hover:text-[#E4405F] transition-colors duration-300 transform hover:scale-110">
+                <FaInstagram size={24} />
               </a>
-              <a href="#" className="hover:text-[#b63a24] transition-colors duration-300 transform hover:scale-110">
+              <a href="#" className="hover:text-[#000000] transition-colors duration-300 transform hover:scale-110">
                 <FaTiktok size={24} />
               </a>
-              <a href="#" className="hover:text-[#b63a24] transition-colors duration-300 transform hover:scale-110">
+              <a href="#" className="hover:text-[#25D366] transition-colors duration-300 transform hover:scale-110">
                 <FaWhatsapp size={24} />
-              </a>
-              <a href="#" className="hover:text-[#b63a24] transition-colors duration-300 transform hover:scale-110">
-                <MessageCircle size={24} />
               </a>
             </div>
           </div>
