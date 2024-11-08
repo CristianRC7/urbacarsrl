@@ -5,15 +5,15 @@ import Modal from '../components/Modal'
 const imagenes = [
   { id: 1, categoria: 'cañaveral', titulo: 'Cañaveral 1', enlace: '/canaveral1.jpg' },
   { id: 2, categoria: 'cañaveral', titulo: 'Cañaveral 2', enlace: '/canaveral2.jpg' },
-  { id: 3, categoria: 'olimpo1', titulo: 'Olimpo 1-A', enlace: '/olimpo1a.jpg' },
-  { id: 4, categoria: 'olimpo1', titulo: 'Olimpo 1-B', enlace: '/olimpo1b.jpg' },
-  { id: 5, categoria: 'olimpo2', titulo: 'Olimpo 2-A', enlace: '/olimpo2a.jpg' },
-  { id: 6, categoria: 'olimpo2', titulo: 'Olimpo 2-B', enlace: '/olimpo2b.jpg' },
+  { id: 3, categoria: 'olimpo1', titulo: 'Olimpo 1-A', enlace: 'https://i.postimg.cc/NfJx7Vd9/LOGO-EL-OLIMPO.png' },
+  { id: 4, categoria: 'olimpo1', titulo: 'Olimpo 1-B', enlace: 'https://i.postimg.cc/NfJx7Vd9/LOGO-EL-OLIMPO.png' },
+  { id: 5, categoria: 'olimpo2', titulo: 'Olimpo 2-A', enlace: 'https://i.postimg.cc/7YYVzDnr/LOGO-EL-OLIMPO-2.png' },
+  { id: 6, categoria: 'olimpo2', titulo: 'Olimpo 2-B', enlace: 'https://i.postimg.cc/7YYVzDnr/LOGO-EL-OLIMPO-2.png' },
   { id: 7, categoria: 'visitas', titulo: 'Visita 1', enlace: '/visita1.jpg' },
   { id: 8, categoria: 'visitas', titulo: 'Visita 2', enlace: '/visita2.jpg' },
   { id: 9, categoria: 'cañaveral', titulo: 'Cañaveral 3', enlace: '/canaveral3.jpg' },
-  { id: 10, categoria: 'olimpo1', titulo: 'Olimpo 1-C', enlace: '/olimpo1c.jpg' },
-  { id: 11, categoria: 'olimpo2', titulo: 'Olimpo 2-C', enlace: '/olimpo2c.jpg' },
+  { id: 10, categoria: 'olimpo1', titulo: 'Olimpo 1-C', enlace: 'https://i.postimg.cc/NfJx7Vd9/LOGO-EL-OLIMPO.png' },
+  { id: 11, categoria: 'olimpo2', titulo: 'Olimpo 2-C', enlace: 'https://i.postimg.cc/7YYVzDnr/LOGO-EL-OLIMPO-2.png' },
   { id: 12, categoria: 'visitas', titulo: 'Visita 3', enlace: '/visita3.jpg' },
 ]
 
