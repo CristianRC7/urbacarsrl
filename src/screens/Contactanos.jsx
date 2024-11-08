@@ -27,16 +27,16 @@ export default function Contactanos() {
               </p>
             </div>
             <div className="flex space-x-4 mt-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-[#1877F2] transition-colors duration-300 transform hover:scale-110">
+              <a href="https://www.facebook.com/UrbacarSRL" target="_blank" rel="noopener noreferrer" className="hover:text-[#1877F2] transition-colors duration-300 transform hover:scale-110">
                 <FaFacebook size={24} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-[#E4405F] transition-colors duration-300 transform hover:scale-110">
+              <a href="https://www.instagram.com/urbacarsrl" target="_blank" rel="noopener noreferrer" className="hover:text-[#E4405F] transition-colors duration-300 transform hover:scale-110">
                 <FaInstagram size={24} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-[#000000] transition-colors duration-300 transform hover:scale-110">
+              <a href="https://www.tiktok.com/@lotes.urbacarsrl" target="_blank" rel="noopener noreferrer" className="hover:text-[#000000] transition-colors duration-300 transform hover:scale-110">
                 <FaTiktok size={24} />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-[#25D366] transition-colors duration-300 transform hover:scale-110">
+              <a href="https://api.whatsapp.com/send?phone=59167800870&text=Hola quiero mas informacion" target="_blank" rel="noopener noreferrer" className="hover:text-[#25D366] transition-colors duration-300 transform hover:scale-110">
                 <FaWhatsapp size={24} />
               </a>
             </div>

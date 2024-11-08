@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
+import urbacarLogo from '../assets/urbacar.png'
 
 export default function Proyectos() {
   const proyectos = [
-    { id: 1, titulo: "El Cañaveral", imagen: "/canaveral.jpg" },
+    { id: 1, titulo: "El Cañaveral", imagen: urbacarLogo },
     { id: 2, titulo: "Olimpo 1", imagen: "https://i.postimg.cc/NfJx7Vd9/LOGO-EL-OLIMPO.png"},
     { id: 3, titulo: "Olimpo 2", imagen: "https://i.postimg.cc/7YYVzDnr/LOGO-EL-OLIMPO-2.png" },
   ]
