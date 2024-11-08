@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 
 export default function Inicio() {
   const images = [
-    '/carousel-1.jpg',
-    '/carousel-2.jpg',
-    '/carousel-3.jpg',
-    '/carousel-4.jpg',
+    'https://i.postimg.cc/vZ8ZM2yz/oficina.webp',
+    'https://i.postimg.cc/4y8Fc3Kn/ingreso-1.webp',
+    'https://i.postimg.cc/1RMd2vWP/ingreso-2.webp',
+    'https://i.postimg.cc/4dP8C3Qw/ingreso-3.webp',
   ]
 
   const [currentImage, setCurrentImage] = useState(0)

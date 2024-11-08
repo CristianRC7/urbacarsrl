@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 export default function Proyectos() {
   const proyectos = [
     { id: 1, titulo: "El Cañaveral", imagen: "/canaveral.jpg" },
-    { id: 2, titulo: "Olimpo 1", imagen: "/olimpo1.jpg" },
-    { id: 3, titulo: "Olimpo 2", imagen: "/olimpo2.jpg" },
+    { id: 2, titulo: "Olimpo 1", imagen: "https://i.postimg.cc/NfJx7Vd9/LOGO-EL-OLIMPO.png"},
+    { id: 3, titulo: "Olimpo 2", imagen: "https://i.postimg.cc/7YYVzDnr/LOGO-EL-OLIMPO-2.png" },
   ]
 
   return (

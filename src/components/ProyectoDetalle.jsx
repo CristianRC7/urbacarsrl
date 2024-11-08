@@ -26,7 +26,7 @@ const proyectos = [
   { 
     id: 2, 
     titulo: "Olimpo 1", 
-    imagen: "/olimpo1.jpg",
+    imagen: "https://i.postimg.cc/NfJx7Vd9/LOGO-EL-OLIMPO.png",
     descripcion: `Bienvenido a "El Olimpo 1", un proyecto excepcional que redefine el concepto de vida urbana. "El Olimpo 1 es más que una urbanización, es un estilo de vida elevado. Situado estratégicamente en la zona nor-este de la ciudad, específicamente por la Virgen de lujan, este proyecto ha sido diseñado para ofrecer comodidad, accesibilidad y calidad de vida excepcionales.
 
     En El Olimpo 1, tu comodidad es nuestra prioridad. Contamos con todos los servicios básicos para garantizar que tu vida diaria sea sin complicaciones. Desde suministro de agua confiable hasta conexiones de electricidad seguras, nos aseguramos de cubrir todas tus necesidades.
@@ -40,7 +40,7 @@ const proyectos = [
   { 
     id: 3, 
     titulo: "Olimpo 2", 
-    imagen: "/olimpo2.jpg",
+    imagen: "https://i.postimg.cc/7YYVzDnr/LOGO-EL-OLIMPO-2.png",
     descripcion: `Te invitamos a explorar 'El Olimpo 2', un proyecto que fusiona la serenidad de un entorno verde con las comodidades esenciales a solo minutos de distancia. Descubre cómo este desarrollo se convierte en tu refugio perfecto, equilibrando la naturaleza con las conexiones comunitarias. En el corazón de 'El Olimpo 2' encontrarás un oasis verde que va más allá de lo común. Nuestra amplia área verde no solo ofrece un respiro natural, sino que también alberga una cancha que se convierte en el escenario perfecto para actividades deportivas y recreativas, a tan solo 2 minutos de distancia, descubrirás un encantador pueblo que agrega una dimensión extra a tu vida en 'El Olimpo 2'. Este pueblo cuenta con un colegio para la educación de tus seres queridos, un centro de salud para tu bienestar y canchas deportivas donde se celebran emocionantes campeonatos, la movilidad es sencilla gracias a las líneas de transporte que conectan directamente con la urbanización. Viaja con facilidad hacia y desde tu hogar, permitiéndote disfrutar de todo lo que el entorno tiene para ofrecer. Este proyecto no solo es sobre adquirir un lote de terreno; es sobre construir una vida plena. 'El Olimpo 2' combina la belleza natural con las comodidades modernas y la vitalidad de una comunidad activa, te invitamos a ser parte de algo más grande. Un lugar donde la tranquilidad y la conexión comunitaria se entrelazan para crear un hogar verdaderamente excepcional. ¿Listo para vivir en armonía con la naturaleza y la comunidad?`
   },
 ]
@@ -64,9 +64,9 @@ export default function ProyectoDetalle() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white shadow-2xl rounded-lg overflow-hidden">
             <div className="relative h-72 sm:h-96 md:h-[30rem]">
-              <img src={proyecto.imagen} alt={proyecto.titulo} className="w-full h-full object-cover" />
+              
               <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-center px-4">{proyecto.titulo}</h1>
+              <img src={proyecto.imagen} alt={proyecto.titulo} className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="p-6 sm:p-10 md:p-16">
