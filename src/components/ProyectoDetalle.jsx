@@ -1,12 +1,13 @@
 import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+
 import Navbar from './Navbar'
 
 const proyectos = [
   { 
     id: 1, 
     titulo: "El Cañaveral", 
-    imagen: "/canaveral.jpg",
+    imagen: "https://i.postimg.cc/mDjPFzSC/LOGO-CANAVERAL.webp",
     descripcion: `Bienvenido a 'El Cañaveral', donde encontrarás más que un hogar; encontrarás una comunidad diseñada para el disfrute de toda la familia. Descubre cómo la vida en nuestro proyecto se combina perfectamente con momentos de alegría y conexión.
 
     Descubre una nueva dimensión de hogar en 'El Cañaveral', donde la accesibilidad se une a la adaptabilidad. Estamos emocionados de presentarte un proyecto que no solo es una inversión en propiedades, sino en tu estilo de vida. Imagina disfrutar de tardes soleadas en nuestras áreas de juego para niños, mientras los más pequeños se divierten con seguridad. Para los adultos, ofrecemos zonas de esparcimiento y relajación donde cada día se siente como unas vacaciones.

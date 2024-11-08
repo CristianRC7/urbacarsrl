@@ -7,7 +7,7 @@ export default function QuienesSomos() {
             Misión, Visión y Valores
           </h2>
           <div className="mt-4 text-xl text-gray-600 space-y-12">
-            <div className="bg-white border-l-4 border-[#f8b500] p-8 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+            <div className="bg-white border-l-4 border-[#c93030] p-8 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
               <h3 className="text-3xl font-bold text-[#b63a24] mb-4">Misión</h3>
               <p>
                 Brindar a nuestros clientes la oportunidad de adquirir lotes de calidad, seguros y accesibles, que les permitan construir el hogar de sus sueños y alcanzar su bienestar familiar.
