@@ -85,7 +85,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               {isScrolled && (
-                <img className="h-16 w-auto" src={Logo} alt="Urbacar Logo" />
+                <img className="h-16 w-auto rounded-full " src={Logo} alt="Urbacar Logo" />
               )}
             </div>
           </div>
