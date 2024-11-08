@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import { Link as ScrollLink } from 'react-scroll'
+import PropTypes from 'prop-types'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import Logo from '../assets/urbacar.png'
@@ -45,7 +45,15 @@ export default function Navbar() {
           className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
             isScrolled ? 'text-white hover:bg-[#a03320]' : 'text-white hover:bg-white hover:text-[#b63a24]'
           } transition-colors duration-300`}
-          onClick={closeMenu}
+          onClick={() => {
+            closeMenu();
+            setTimeout(() => {
+              const element = document.getElementById(to);
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 100);
+          }}
         >
           {children}
         </RouterLink>
@@ -53,10 +61,9 @@ export default function Navbar() {
     }
   }
 
-  // Prop validation for NavLink component
   NavLink.propTypes = {
-    to: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
+    to: PropTypes.string.isRequired,       
+    children: PropTypes.node.isRequired, 
   }
 
   return (
@@ -84,7 +91,9 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               type="button"
               className={`inline-flex items-center justify-center p-2 rounded-md ${
-                isScrolled ? 'text-white hover:bg-[#a03320]' : 'text-white hover:bg-white hover:text-[#b63a24]'
+                isScrolled
+                  ? 'text-white hover:bg-[#a03320]'
+                  : 'text-[#a03320] bg-white hover:bg-gray-100'
               } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-colors duration-300`}
               aria-controls="mobile-menu"
               aria-expanded="false"
@@ -114,7 +123,7 @@ export default function Navbar() {
           ))}
         </div>
       </div>
-      
+
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"

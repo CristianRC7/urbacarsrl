@@ -19,9 +19,9 @@ export default function Proyectos() {
               <img className="w-full h-48 object-cover" src={proyecto.imagen} alt={proyecto.titulo} />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{proyecto.titulo}</h3>
-                <Link 
+                <Link
                   to={`/proyecto/${proyecto.id}`}
-                  className="inline-block bg-[#b63a24] text-white px-4 py-2 rounded hover:bg-[#a03320] transition-colors"
+                  className="mt-4 inline-block bg-[#b63a24] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#a03320] transition-colors duration-300"
                 >
                   Ver más
                 </Link>

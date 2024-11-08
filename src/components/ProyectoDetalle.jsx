@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Navbar from './Navbar'
 
@@ -48,32 +49,38 @@ export default function ProyectoDetalle() {
   const { id } = useParams()
   const proyecto = proyectos.find(p => p.id === parseInt(id))
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!proyecto) {
     return <div>Proyecto no encontrado</div>
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200">
+    <div className="min-h-screen bg-gray-800">
       <Navbar />
-      <div className="pt-20 pb-12">
+      <div className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white shadow-2xl rounded-lg overflow-hidden">
-            <div className="relative h-64 sm:h-80 md:h-96">
+            <div className="relative h-72 sm:h-96 md:h-[30rem]">
               <img src={proyecto.imagen} alt={proyecto.titulo} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                <h1 className="text-4xl sm:text-5xl font-bold text-white text-center">{proyecto.titulo}</h1>
+              <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-center px-4">{proyecto.titulo}</h1>
               </div>
             </div>
-            <div className="p-6 sm:p-10">
+            <div className="p-6 sm:p-10 md:p-16">
               <div className="prose prose-lg max-w-none">
-                <p className="text-gray-700 whitespace-pre-line">{proyecto.descripcion}</p>
+                <p className="text-gray-700 whitespace-pre-line leading-relaxed">{proyecto.descripcion}</p>
               </div>
-              <Link 
-                to="/" 
-                className="mt-8 inline-block bg-[#b63a24] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#a03320] transition-colors duration-300"
-              >
-                Volver a Inicio
-              </Link>
+              <div className="mt-12 flex justify-center">
+                <Link 
+                  to="/" 
+                  className="inline-block bg-[#b63a24] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#a03320] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
+                  Volver a Inicio
+                </Link>
+              </div>
             </div>
           </div>
         </div>
