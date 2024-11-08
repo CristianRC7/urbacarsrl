@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-scroll'
+import PropTypes from 'prop-types'
+import { Link as ScrollLink } from 'react-scroll'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import Logo from '../assets/urbacar.png'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +21,42 @@ export default function Navbar() {
 
   const closeMenu = () => {
     setIsOpen(false)
+  }
+
+  const NavLink = ({ to, children }) => {
+    if (isHomePage) {
+      return (
+        <ScrollLink
+          to={to}
+          smooth={true}
+          duration={500}
+          className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
+            isScrolled ? 'text-white hover:bg-[#a03320]' : 'text-white hover:bg-white hover:text-[#b63a24]'
+          } transition-colors duration-300`}
+          onClick={closeMenu}
+        >
+          {children}
+        </ScrollLink>
+      )
+    } else {
+      return (
+        <RouterLink
+          to={`/#${to}`}
+          className={`block px-3 py-2 rounded-md text-base font-medium cursor-pointer ${
+            isScrolled ? 'text-white hover:bg-[#a03320]' : 'text-white hover:bg-white hover:text-[#b63a24]'
+          } transition-colors duration-300`}
+          onClick={closeMenu}
+        >
+          {children}
+        </RouterLink>
+      )
+    }
+  }
+
+  // Prop validation for NavLink component
+  NavLink.propTypes = {
+    to: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
   }
 
   return (
@@ -31,19 +71,11 @@ export default function Navbar() {
             </div>
           </div>
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-center space-x-4">
               {['inicio', 'quienes-somos', 'proyectos', 'galeria', 'contactanos'].map((item) => (
-                <Link
-                  key={item}
-                  to={item}
-                  smooth={true}
-                  duration={500}
-                  className={`px-3 py-2 rounded-md text-lg font-medium cursor-pointer ${
-                    isScrolled ? 'text-white hover:bg-[#a03320]' : 'text-white hover:bg-white hover:text-[#b63a24]'
-                  } transition-colors duration-300`}
-                >
+                <NavLink key={item} to={item}>
                   {item.charAt(0).toUpperCase() + item.slice(1)}
-                </Link>
+                </NavLink>
               ))}
             </div>
           </div>
@@ -76,16 +108,9 @@ export default function Navbar() {
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {['inicio', 'quienes-somos', 'proyectos', 'galeria', 'contactanos'].map((item) => (
-            <Link
-              key={item}
-              to={item}
-              smooth={true}
-              duration={500}
-              onClick={closeMenu}
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#a03320] transition-colors duration-300 cursor-pointer"
-            >
+            <NavLink key={item} to={item}>
               {item.charAt(0).toUpperCase() + item.slice(1)}
-            </Link>
+            </NavLink>
           ))}
         </div>
       </div>
