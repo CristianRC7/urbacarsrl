@@ -5,11 +5,11 @@ import Proyectos from './screens/Proyectos'
 import Galeria from './screens/Galeria'
 import Contactanos from './screens/Contactanos'
 
-export default function Component() {
+export default function App() {
   return (
     <div className="font-sans">
       <Navbar />
-      <main className="pt-20">
+      <main>
         <Inicio />
         <QuienesSomos />
         <Proyectos />

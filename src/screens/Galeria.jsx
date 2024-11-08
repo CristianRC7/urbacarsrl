@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Modal from '../components/Modal'
 
 const imagenes = [
   { id: 1, categoria: 'cañaveral', titulo: 'Cañaveral 1', enlace: '/canaveral1.jpg' },
@@ -37,26 +38,26 @@ export default function Galeria() {
         <h2 className="text-4xl font-extrabold text-[#b63a24] sm:text-5xl mb-12 text-center">
           Galería de Imágenes
         </h2>
-        <div className="flex justify-center space-x-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
           {['todos', 'cañaveral', 'olimpo1', 'olimpo2', 'visitas'].map((categoria) => (
             <button
               key={categoria}
               onClick={() => setFiltro(categoria)}
-              className={`px-4 py-2 rounded-full ${
+              className={`px-3 py-1 sm:px-4 sm:py-2 rounded-full ${
                 filtro === categoria
                   ? 'bg-[#b63a24] text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              } transition-colors duration-300`}
+              } transition-colors duration-300 text-xs sm:text-sm md:text-base`}
             >
               {categoria.charAt(0).toUpperCase() + categoria.slice(1)}
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 transition-transform duration-500 ease-out">
           {imagenesFiltradas.map((imagen) => (
             <div
               key={imagen.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-105"
+              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform duration-500 hover:scale-105"
               onClick={() => abrirModal(imagen)}
             >
               <img src={imagen.enlace} alt={imagen.titulo} className="w-full h-48 object-cover" />
@@ -68,23 +69,17 @@ export default function Galeria() {
           ))}
         </div>
       </div>
-      {modalImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClick={cerrarModal}>
-          <div className="bg-white p-4 rounded-lg max-w-3xl max-h-[90vh] overflow-auto" onClick={(e) => e.stopPropagation()}>
+      <Modal isOpen={!!modalImage} onClose={cerrarModal}>
+        {modalImage && (
+          <div className="p-4">
             <img src={modalImage.enlace} alt={modalImage.titulo} className="w-full h-auto" />
             <div className="mt-4">
               <h3 className="text-xl font-semibold text-gray-800">{modalImage.titulo}</h3>
               <p className="text-gray-600">{modalImage.categoria}</p>
             </div>
-            <button
-              onClick={cerrarModal}
-              className="mt-4 px-4 py-2 bg-[#b63a24] text-white rounded hover:bg-[#a03320] transition-colors"
-            >
-              Cerrar
-            </button>
           </div>
-        </div>
-      )}
+        )}
+      </Modal>
     </section>
   )
 }
