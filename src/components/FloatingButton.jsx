@@ -1,31 +1,31 @@
-import { useState, useEffect } from 'react'
-import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp, FaShareAlt } from 'react-icons/fa'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useEffect } from 'react';
+import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp, FaShareAlt, FaTimes } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function FloatingButton() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true)
+      if (window.scrollY > 200) {
+        setIsVisible(true);
       } else {
-        setIsVisible(false)
-        setIsOpen(false)
+        setIsVisible(false);
+        setIsOpen(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll', toggleVisibility)
-    return () => window.removeEventListener('scroll', toggleVisibility)
-  }, [])
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
 
   const socialLinks = [
     { icon: FaFacebook, href: "https://www.facebook.com/UrbacarSRL", color: "#1877F2" },
     { icon: FaInstagram, href: "https://www.instagram.com/urbacarsrl", color: "#E4405F" },
     { icon: FaTiktok, href: "https://www.tiktok.com/@lotes.urbacarsrl", color: "#000000" },
     { icon: FaWhatsapp, href: "https://api.whatsapp.com/send?phone=59167800870&text=Hola quiero mas informacion", color: "#25D366" },
-  ]
+  ];
 
   return (
     <AnimatePresence>
@@ -39,9 +39,9 @@ export default function FloatingButton() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="bg-[#b63a24] text-white p-3 rounded-full shadow-lg hover:bg-[#a03320] transition-colors duration-300"
-            aria-label="Open social media links"
+            aria-label="Toggle social media links"
           >
-            <FaShareAlt size={24} />
+            {isOpen ? <FaTimes size={24} /> : <FaShareAlt size={24} />}
           </button>
           <AnimatePresence>
             {isOpen && (
@@ -70,5 +70,5 @@ export default function FloatingButton() {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }
