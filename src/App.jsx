@@ -2,13 +2,16 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import Navbar from './components/Navbar'
+
 import Inicio from './screens/Inicio'
 import QuienesSomos from './screens/QuienesSomos'
 import Proyectos from './screens/Proyectos'
 import Galeria from './screens/Galeria'
 import Contactanos from './screens/Contactanos'
+
+import Navbar from './components/Navbar'
 import ProyectoDetalle from './components/ProyectoDetalle'
+import FloatingButton from './components/FloatingButton'
 
 export default function App() {
   useEffect(() => {
@@ -39,9 +42,15 @@ export default function App() {
                 </div>
               </main>
               <Contactanos />
+              <FloatingButton />
             </>
           } />
-          <Route path="/proyecto/:id" element={<ProyectoDetalle />} />
+          <Route path="/proyecto/:id" element={
+            <>
+              <ProyectoDetalle />
+              <FloatingButton />
+            </>
+          } />
         </Routes>
       </div>
     </Router>
