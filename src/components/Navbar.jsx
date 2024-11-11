@@ -91,7 +91,7 @@ export default function Navbar() {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
-              {['inicio', 'quienes-somos', 'proyectos', 'galeria', 'contactanos'].map((item) => (
+              {['inicio', 'quienes-somos', 'urbanizaciones', 'galeria', 'contactanos'].map((item) => (
                 <NavLink key={item} to={item}>
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </NavLink>
@@ -128,7 +128,7 @@ export default function Navbar() {
         } transition-transform duration-300 ease-in-out z-50`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {['inicio', 'quienes-somos', 'proyectos', 'galeria', 'contactanos'].map((item) => (
+          {['inicio', 'quienes-somos', 'urbanizaciones', 'galeria', 'contactanos'].map((item) => (
             <NavLink key={item} to={item}>
               {item.charAt(0).toUpperCase() + item.slice(1)}
             </NavLink>

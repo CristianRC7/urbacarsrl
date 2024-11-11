@@ -8,10 +8,10 @@ export default function Proyectos() {
   ]
 
   return (
-    <section id="proyectos" className="py-20 bg-gradient-to-b from-white to-gray-100">
+    <section id="urbanizaciones" className="py-20 bg-gradient-to-b from-white to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-extrabold text-[#b63a24] sm:text-5xl mb-12 text-center">
-          Nuestros Proyectos
+          Nuestras Urbanizaciones
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {proyectos.map((proyecto) => (

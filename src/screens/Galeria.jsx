@@ -73,7 +73,6 @@ export default function Galeria() {
                 <img src={imagen.enlace} alt={imagen.titulo} className="w-full h-48 object-cover" />
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-gray-800">{imagen.titulo}</h3>
-                  <p className="text-sm text-gray-600">{imagen.categoria}</p>
                 </div>
               </motion.div>
             ))}
