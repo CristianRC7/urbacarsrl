@@ -7,6 +7,7 @@ import Inicio from './screens/Inicio'
 import QuienesSomos from './screens/QuienesSomos'
 import NuestraHistoria from './screens/NuestraHistoria'
 import Proyectos from './screens/Proyectos'
+import Beneficios from './screens/Beneficios'
 import Galeria from './screens/Galeria'
 import Contactanos from './screens/Contactanos'
 
@@ -33,13 +34,16 @@ export default function App() {
               <main>
                 <Inicio />
                 <div data-aos="fade-up">
-                  <QuienesSomos />
-                </div>
-                <div data-aos="fade-up">
                   <NuestraHistoria />
                 </div>
                 <div data-aos="fade-up">
+                  <QuienesSomos />
+                </div>
+                <div data-aos="fade-up">
                   <Proyectos />
+                </div>
+                <div data-aos="fade-up">
+                  <Beneficios />
                 </div>
                 <div data-aos="fade-up">
                   <Galeria />

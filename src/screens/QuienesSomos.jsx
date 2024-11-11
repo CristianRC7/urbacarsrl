@@ -1,6 +1,6 @@
 export default function QuienesSomos() {
   return (
-    <section id="quienes-somos" className="py-20 bg-gradient-to-b from-gray-100 to-white">
+    <section className="py-20 bg-gradient-to-b from-gray-100 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="text-4xl font-extrabold text-[#b63a24] sm:text-5xl mb-12">
