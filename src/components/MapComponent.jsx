@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { MapContainer, TileLayer, Polygon, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import Config from '../config/Config';
 
 export default function MapComponent({ projectId }) {
   const [mapData, setMapData] = useState(null);
 
   useEffect(() => {
-    fetch(`http://hola/mapaBACKEND/get_mapa.php?proyecto_id=${projectId}`)
+    fetch(`${Config.GET_MAPA_URL}?proyecto_id=${projectId}`)
       .then((response) => response.json())
       .then((data) => setMapData(data))
       .catch((error) => console.error('Error loading map data:', error));
@@ -70,5 +71,5 @@ export default function MapComponent({ projectId }) {
 }
 
 MapComponent.propTypes = {
-  projectId: PropTypes.number.isRequired, 
+  projectId: PropTypes.number.isRequired,
 };
