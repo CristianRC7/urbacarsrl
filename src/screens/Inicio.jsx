@@ -16,7 +16,7 @@ export default function Inicio() {
     }, 5000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [images.length])
 
   return (
     <section id="inicio" className="relative h-screen overflow-hidden">
