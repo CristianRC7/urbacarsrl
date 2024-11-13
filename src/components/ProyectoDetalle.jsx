@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-
 import Navbar from './Navbar'
+import MapComponent from './MapComponent';
 
 const proyectos = [
   { 
@@ -59,30 +59,42 @@ export default function ProyectoDetalle() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-white">
       <Navbar />
-      <div className="pt-24 pb-16">
+      <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white shadow-2xl rounded-lg overflow-hidden">
-            <div className="relative h-72 sm:h-96 md:h-[30rem]">
-              
-              <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-              <img src={proyecto.imagen} alt={proyecto.titulo} className="w-full h-full object-cover" />
-              </div>
+          <div className="relative mb-12">
+            <img 
+              src={proyecto.imagen} 
+              alt={proyecto.titulo} 
+              className="w-full h-[40vh] md:h-[60vh] object-cover rounded-lg shadow-2xl"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center">
+              <h1 className="text-4xl md:text-6xl font-bold text-white text-center px-4">
+                {proyecto.titulo}
+              </h1>
             </div>
-            <div className="p-6 sm:p-10 md:p-16">
-              <div className="prose prose-lg max-w-none">
-                <p className="text-gray-700 whitespace-pre-line leading-relaxed">{proyecto.descripcion}</p>
-              </div>
-              <div className="mt-12 flex justify-center">
-                <Link 
-                  to="/" 
-                  className="inline-block bg-[#b63a24] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#a03320] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  Volver a Inicio
-                </Link>
-              </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
+            <div className="prose prose-lg max-w-none">
+              {proyecto.descripcion.split('\n\n').map((paragraph, index) => (
+                <p key={index} className="mb-6 text-gray-700 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
             </div>
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold mb-4">Mapa del Proyecto</h2>
+              <MapComponent projectId={proyecto.id} />
+            </div>
+          </div>
+          <div className="mt-12 flex justify-center">
+            <Link 
+              to="/" 
+              className="inline-block bg-[#b63a24] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#a03320] transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Volver a Inicio
+            </Link>
           </div>
         </div>
       </div>
