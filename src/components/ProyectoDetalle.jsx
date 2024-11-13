@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Navbar from './Navbar'
 import MapComponent from './MapComponent';
+import Contactanos from '../screens/Contactanos';
 
 const proyectos = [
   { 
@@ -70,9 +71,6 @@ export default function ProyectoDetalle() {
               className="w-full h-[40vh] md:h-[60vh] object-cover rounded-lg shadow-2xl"
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-white text-center px-4">
-                {proyecto.titulo}
-              </h1>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
@@ -98,6 +96,7 @@ export default function ProyectoDetalle() {
           </div>
         </div>
       </div>
+      <Contactanos />
     </div>
   )
 }
