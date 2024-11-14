@@ -8,7 +8,7 @@ export default function FloatingButton() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 200) {
+      if (window.scrollY > 80) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
