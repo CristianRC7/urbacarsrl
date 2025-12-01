@@ -10,6 +10,8 @@ import Proyectos from './screens/Proyectos'
 import Beneficios from './screens/Beneficios'
 import Galeria from './screens/Galeria'
 import Contactanos from './screens/Contactanos'
+import PoliticaPrivacidad from './screens/PoliticaPrivacidad'
+import TerminosCondiciones from './screens/TerminosCondiciones'
 
 import Navbar from './components/Navbar'
 import ProyectoDetalle from './components/ProyectoDetalle'
@@ -56,6 +58,18 @@ export default function App() {
           <Route path="/proyecto/:id" element={
             <>
               <ProyectoDetalle />
+              <FloatingButton />
+            </>
+          } />
+          <Route path="/politica-privacidad" element={
+            <>
+              <PoliticaPrivacidad />
+              <FloatingButton />
+            </>
+          } />
+          <Route path="/terminos-condiciones" element={
+            <>
+              <TerminosCondiciones />
               <FloatingButton />
             </>
           } />

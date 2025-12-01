@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Briefcase } from 'lucide-react'
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 export default function Contactanos() {
   return (
@@ -57,8 +58,19 @@ export default function Contactanos() {
         </div>
       </div>
       <div className="bg-[#2a2a2a] py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p>&copy; 2023 Urbacar S.R.L. Todos los derechos reservados.</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-2 md:space-y-0">
+            <p>&copy; 2024 Urbacar S.R.L. Todos los derechos reservados.</p>
+            <div className="flex space-x-4 text-sm">
+              <Link to="/politica-privacidad" className="hover:text-[#b63a24] transition-colors duration-300">
+                Política de Privacidad
+              </Link>
+              <span>|</span>
+              <Link to="/terminos-condiciones" className="hover:text-[#b63a24] transition-colors duration-300">
+                Términos y Condiciones
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
