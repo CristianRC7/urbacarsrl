@@ -44,7 +44,7 @@ export default function Galeria() {
             <button
               key={categoria}
               onClick={() => setFiltro(categoria)}
-              className={`px-3 py-1 sm:px-4 sm:py-2 rounded-full ${
+              className={`px-3 py-1 sm:px-4 sm:py-2 rounded-full cursor-pointer ${
                 filtro === categoria
                   ? 'bg-[#b63a24] text-white'
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'

@@ -19,25 +19,27 @@ export default function Inicio() {
   }, [images.length])
 
   return (
-    <section id="inicio" className="relative h-screen overflow-hidden">
+    <section id="inicio" className="relative w-full h-screen overflow-hidden">
       {images.map((img, index) => (
         <div
           key={img}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-            index === currentImage ? 'opacity-100' : 'opacity-0'
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            index === currentImage ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
+          style={{ position: 'absolute' }}
         >
           <img
             src={img}
             alt={`Carousel image ${index + 1}`}
-            className="object-cover w-full h-full"
+            className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
       ))}
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Bienvenido a Urbacar S.R.L.</h1>
-          <p className="text-xl">Tu futuro hogar comienza aquí</p>
+      <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-20">
+        <div className="text-center text-white px-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Bienvenido a Urbacar S.R.L.</h1>
+          <p className="text-lg md:text-xl lg:text-2xl">Tu futuro hogar comienza aquí</p>
         </div>
       </div>
     </section>

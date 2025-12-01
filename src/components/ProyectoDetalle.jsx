@@ -68,10 +68,8 @@ export default function ProyectoDetalle() {
             <img 
               src={proyecto.imagen} 
               alt={proyecto.titulo} 
-              className="w-full h-[40vh] md:h-[60vh] object-cover rounded-lg shadow-2xl"
+              className="w-full h-[40vh] md:h-[60vh] object-contain rounded-lg shadow-2xl bg-white"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex items-center justify-center">
-            </div>
           </div>
           <div className="bg-white rounded-lg shadow-xl p-8 md:p-12">
             <div className="prose prose-lg max-w-none">
